@@ -14,8 +14,8 @@ spring:
               - email
           google:
             client-name: google
-            client-id:
-            client-secret:
+            client-id: 379871879255-d1olocvusmc2hp5i9dkjf6tpk46j3m9f.apps.googleusercontent.com
+            client-secret: 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
             redirect-uri: http://localhost:8080/login/oauth2/code/google
             authorization-grant-type: authorization_code
             scope:
