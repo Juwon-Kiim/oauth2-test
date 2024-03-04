@@ -1,5 +1,9 @@
 package com.example.OAuthSession.service;
 
+import com.example.OAuthSession.dto.CustomOAuth2User;
+import com.example.OAuthSession.dto.GoogleResponse;
+import com.example.OAuthSession.dto.NaverResponse;
+import com.example.OAuthSession.dto.OAuth2Response;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
@@ -15,6 +19,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         System.out.println("oAuth2User.getAttributes() = " + oAuth2User.getAttributes());
 
         String registrationId = userRequest.getClientRegistration().getRegistrationId();
+        OAuth2Response oAuth2Response = null;
         if(registrationId.equals("naver")){
             oAuth2Response = new NaverResponse(oAuth2User.getAttributes());
         }else if(registrationId.equals("google")){
